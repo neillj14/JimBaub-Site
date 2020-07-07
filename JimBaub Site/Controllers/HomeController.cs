@@ -1,4 +1,7 @@
-﻿using System;
+﻿using JimBaub_Site.Models;
+using JimBaub_Site.Services;
+using Microsoft.Ajax.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,7 +11,8 @@ namespace JimBaub_Site.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        
+        public ActionResult Index(IStoreData db)
         {
             return View();
         }
@@ -24,6 +28,12 @@ namespace JimBaub_Site.Controllers
         {
             ViewBag.Message = "Your contact page.";
 
+            return View();
+        }
+        public ActionResult Store()
+        {
+            ViewBag.Message = "Don't Delay, Buy Today!";
+            var model = 
             return View();
         }
     }
