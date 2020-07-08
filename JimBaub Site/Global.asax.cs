@@ -16,7 +16,7 @@ namespace JimBaub_Site
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            //ContainerConfig.RegisterContainer();
+            ContainerConfig.RegisterContainer();
         }
     }
 }

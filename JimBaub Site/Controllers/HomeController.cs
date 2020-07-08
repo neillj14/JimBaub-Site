@@ -11,8 +11,14 @@ namespace JimBaub_Site.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IStoreData db;
+
+        public HomeController(IStoreData db)
+        {
+            this.db = db;
+        }
         
-        public ActionResult Index(IStoreData db)
+        public ActionResult Index()
         {
             return View();
         }
@@ -33,8 +39,8 @@ namespace JimBaub_Site.Controllers
         public ActionResult Store()
         {
             ViewBag.Message = "Don't Delay, Buy Today!";
-            var model = 
-            return View();
+            var model = db.GetAllItems();
+            return View(model);
         }
     }
 }
